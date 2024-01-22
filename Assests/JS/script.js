@@ -105,14 +105,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to check the answer
   function checkAnswer(question, selectedOption) {
+    const feedbackContainer = document.getElementById('feedback-container');
+  
     if (selectedOption === question.correctAnswer) {
       score++;
       feedbackContainer.innerText = 'Correct!';
     } else {
-      feedbackContainer.innerText = 'Incorrect!';
-      updateTimer(-10);
+      feedbackContainer.innerText = 'Wrong!';
+      updateTimer(-10); // Penalty for wrong answer (adjust as needed)
     }
-
+  
+    // Show the feedback container
+    feedbackContainer.classList.remove('hide');
+  
     currentQuestionIndex++;
     nextQuestion();
   }
