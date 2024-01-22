@@ -1,3 +1,4 @@
+/* Reset some default styles and set a base font */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -9,24 +10,27 @@ body {
   align-items: center;
 }
 
+/* Container styling for the main content */
 .container {
   max-width: 800px;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Styling for main heading */
 h1 {
   text-align: center;
-  color: #333;
+  color: #000000;
   margin-top: 20px;
 }
 
+/* Button styling */
 button {
   background-color: #4c4c4c;
   color: #fff;
@@ -38,43 +42,48 @@ button {
   margin: 10px;
 }
 
+/* Hover effect for buttons */
 button:hover {
   background-color: #1f1f1f;
 }
 
+/* Styling for timer container */
 #timer-container {
   display: flex;
   align-items: center;
   width: 100%;
   margin-top: 10px;
-  align-self: flex-start;
 }
 
+/* Styling for time label */
 #time-label {
   font-size: 14px;
-  color: #555;
+  color: #000000;
   margin-right: 5px;
 }
 
+/* Styling for timer display */
 #timer {
   font-size: 24px;
 }
 
+/* Hide class for elements */
 .hide {
   display: none;
 }
 
+/* Styling for question container */
 #question-container {
-  text-align: center;
-  margin-top: 20px;
+  position: relative;
 }
 
+/* Styling for options container */
 #options-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
+/* Styling for answer buttons */
 button.answer-btn {
   background-color: #008CBA;
   color: #fff;
@@ -86,42 +95,52 @@ button.answer-btn {
   margin: 10px;
 }
 
+/* Hover effect for answer buttons */
 button.answer-btn:hover {
   background-color: #00506b;
 }
 
+/* Styling for feedback container */
 #feedback-container {
   text-align: center;
   margin-top: 10px;
 }
 
+/* Styling for score container */
 #score-container {
   text-align: center;
   margin-top: 20px;
 }
 
+/* Styling for initials input */
 #initials {
   padding: 8px;
   margin-top: 10px;
 }
 
+/* Styling for save score button */
 #save-score-btn {
   margin-top: 10px;
 }
 
-#high-scores-btn {
-  background-color: #008CBA;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-right: 10px;
-  align-self: flex-end; /* Align to the top left */
+/* Styling for start button */
+#start-btn {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+/* Styling for high scores button */
+#high-scores-btn {
+  background-color: #008CBA;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hover effect for high scores button */
 #high-scores-btn:hover {
   background-color: #00506b;
 }

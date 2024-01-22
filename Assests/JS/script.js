@@ -66,10 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   ];
 
+  // Event listeners for buttons
   startButton.addEventListener('click', startQuiz);
   highScoresButton.addEventListener('click', viewHighScores);
   saveScoreButton.addEventListener('click', saveScore);
 
+  // Function to start the quiz
   function startQuiz() {
     startButton.classList.add('hide');
     highScoresButton.classList.add('hide'); // Hide high scores button during the quiz
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     timer = setInterval(updateTimer, 1000);
   }
 
+  // Function to display the next question
   function nextQuestion() {
     if (currentQuestionIndex < questions.length) {
       displayQuestion(questions[currentQuestionIndex]);
@@ -86,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Function to display a question
   function displayQuestion(question) {
     feedbackContainer.innerText = '';
     document.getElementById('question-text').innerText = question.question;
@@ -99,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Function to check the answer
   function checkAnswer(question, selectedOption) {
     if (selectedOption === question.correctAnswer) {
       score++;
@@ -112,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     nextQuestion();
   }
 
+  // Function to update the timer
   function updateTimer(seconds = -1) {
     const timeRemaining = parseInt(timerElement.innerText, 10);
     const newTime = Math.max(timeRemaining + seconds, 0);
@@ -122,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Function to end the quiz
   function endQuiz() {
     clearInterval(timer);
     questionContainer.classList.add('hide');
@@ -129,9 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
     scoreContainer.classList.remove('hide');
   }
 
+  // Function to save the score
   function saveScore() {
     const initials = initialsInput.value.trim();
     if (initials !== '') {
+      // Handle localStorage operations and potential errors
       const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
       const newScore = { initials, score };
       highScores.push(newScore);
@@ -140,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Function to view high scores
   function viewHighScores() {
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     const highScoresMessage = highScores.length > 0 ?
